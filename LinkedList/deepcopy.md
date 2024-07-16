@@ -7,10 +7,9 @@ Two main problems we need to solve are: there can only be n nodes in the new
 list, and each pointer has to point to the correct node. We cannot simply create
 all new nodes.
 ## Approach
-We tackle this problem in three loops over the nodes.  
-1. On the first loop, we create a copy of the nodes and place them into an array. We leave the next pointer and the random pointer as none for now.
-2. The second loop attaches the nodes, filling in the next pointers.
-3. The third loop finds the index of the random pointer for each node in the
+We tackle this problem in two loops over the nodes.  
+1. On the first loop, we create a copy of the nodes and place them into an array. We leave the the random pointer as none for now.
+2. The second loop finds the index of the random pointer for each node in the
 original array, then links the corresponding node in the new array to the new
 node. This ensures no duplicate nodes are created and the deep copy has the same
 wiring as the original.

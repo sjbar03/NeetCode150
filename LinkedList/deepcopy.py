@@ -14,15 +14,16 @@ class Solution:
         curr = head
         orig, n = [], []
         i = 0
+        prev = None
 
         while curr:
             orig.append(curr)
             n.append(Node(curr.val, next=None, random=None))
+            if prev:
+                prev.next = n[-1] # Keep prev reference to remove second loop.
+            prev = n[-1]
             curr = curr.next
             i += 1
-        
-        for i in range(len(n) - 1):
-            n[i].next = n[i+1]
 
         for i in range(len(orig)):
             print(orig[i].random)
